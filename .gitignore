@@ -1,0 +1,15 @@
+# Ficheiros compilados do Maven
+/target/
+/pom.xml.bak
+
+# Ficheiros do IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Ficheiros de Log
+*.log
+
+# Ficheiros do sistema (macOS, Windows)
+.DS_Store
+Thumbs.db
