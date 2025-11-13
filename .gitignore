@@ -10,6 +10,6 @@
 # Ficheiros de Log
 *.log
 
-# Ficheiros do sistema (Windows)
+# Ficheiros do sistema 
 .DS_Store
 Thumbs.db
