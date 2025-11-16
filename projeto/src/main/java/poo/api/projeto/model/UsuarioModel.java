@@ -41,22 +41,21 @@ public class UsuarioModel {
     @Column(nullable = false, updatable = false)
     private LocalDateTime criadoEm;
 
-    // ESSA PARTE AQUI TA COMENTADA PORQUE AINDA FALTA LUAN, ALEXIS E GABRIEL FAZER AS OUTRAS CLASSES :
+    //RELACOES ONETOMANY COM AS OUTRAS CLASSES 
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<CentroDeCustoModel> centroDeCusto = new ArrayList<>();
 
-    //@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    //private List<CentroDeCustoModel> centroDeCusto = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrcamentoMensalModel> orcamentosMensais = new ArrayList<>();
 
-    //@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    //private List<OrcamentoMensalModel> orcamentosMensais = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<DesafioModel> desafios = new ArrayList<>();
 
-    //@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    //private List<DesafioModel> desafios = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<MetaModel> metas = new ArrayList<>();
 
-    //@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    //private List<MetaModel> metas = new ArrayList<>();
-
-    //@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    //private List<TransacaoModel> transacoes = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<TransacaoModel> transacoes = new ArrayList<>();
 
     public void atualizarPerfil(String nome, Integer idade) {
         if (nome != null && !nome.trim().isEmpty()) {
